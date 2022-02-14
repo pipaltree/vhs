@@ -16,7 +16,11 @@
         "fluid"
     ],
     "config": {
-      "preferred-install": "dist"
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "typo3/cms-composer-installers": true,
+            "typo3/class-alias-loader": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -33,12 +37,12 @@
         }
     },
     "require": {
-        "php": "^7.0.0",
-        "typo3/cms-core": "^8.7 || ^9 || ^10 || ^11.1@dev || dev-master",
-        "typo3/cms-extbase": "^8.7 || ^9 || ^10 || ^11.1@dev || dev-master",
-        "typo3/cms-fluid": "^8.7 || ^9 || ^10 || ^11.1@dev || dev-master",
-        "typo3/cms-frontend": "^8.7 || ^9 || ^10 || ^11.1@dev || dev-master",
-        "typo3/cms-backend": "^8.7 || ^9 || ^10 || ^11.1@dev || dev-master"
+        "php": "^7.4 || ^8.0",
+        "typo3/cms-core": "^11.5",
+        "typo3/cms-extbase": "^11.5",
+        "typo3/cms-fluid": "^11.5",
+        "typo3/cms-frontend": "^11.5",
+        "typo3/cms-backend": "^11.5"
     },
     "replace": {
         "typo3-ter/vhs": "self.version"
