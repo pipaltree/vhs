@@ -9,7 +9,7 @@ namespace FluidTYPO3\Vhs\ViewHelpers\Page;
  */
 
 use FluidTYPO3\Vhs\ViewHelpers\Menu\AbstractMenuViewHelper;
-use TYPO3\CMS\Frontend\Page\PageRepository;
+use TYPO3\CMS\Core\Domain\Repository\PageRepository;
 
 /**
  * ViewHelper to make a breadcrumb link set from a pageUid, automatic or manual.
@@ -66,8 +66,8 @@ class BreadCrumbViewHelper extends AbstractMenuViewHelper
                 $isAllowedDoktype = (int) $record['doktype'] < PageRepository::DOKTYPE_SPACER;
             }
 
-            if ((true === $showHidden && true === $isHidden || false === $isHidden) && true === $isAllowedDoktype) {
-                array_push($rootLineData, $record);
+            if (((true === $showHidden && true === $isHidden) || false === $isHidden) && true === $isAllowedDoktype) {
+                $rootLineData[] = $record;
             }
         }
         $rootLine = $this->parseMenu($rootLineData);
